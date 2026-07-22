@@ -35,6 +35,11 @@ dependencies = [
   "httpx>=0.27,<1",
 ]
 
+[project.urls]
+Homepage = "https://github.com/andykr1k/OpenEvals"
+Repository = "https://github.com/andykr1k/OpenEvals.git"
+Issues = "https://github.com/andykr1k/OpenEvals/issues"
+
 [dependency-groups]
 dev = [
     "pytest>=8",

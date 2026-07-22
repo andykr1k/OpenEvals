@@ -1,5 +1,9 @@
 # Open Evals
 
+[![CI](https://github.com/andykr1k/OpenEvals/actions/workflows/ci.yml/badge.svg)](https://github.com/andykr1k/OpenEvals/actions/workflows/ci.yml)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-3776AB.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 Open Evals is a terminal-first benchmark tool for LLMs and vision-language models
 (VLMs) served through an OpenAI-compatible API. It runs repeatable workloads against
 local inference servers, streams a readable response sample, and reports latency,
@@ -41,6 +45,8 @@ vLLM and should work with other servers that implement streaming `POST
 Install the locked development environment from a checkout:
 
 ```bash
+git clone https://github.com/andykr1k/OpenEvals.git
+cd OpenEvals
 uv sync --locked
 ```
 
