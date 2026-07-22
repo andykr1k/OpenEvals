@@ -1,0 +1,25 @@
+{
+  "endpoint": "http://127.0.0.1:8000",
+  "model": "Qwen/Qwen2.5-VL-7B-Instruct",
+  "concurrency": [1, 2],
+  "repetitions": 3,
+  "warmup_requests": 1,
+  "metrics_endpoint": "http://127.0.0.1:8000/metrics",
+  "suite": {
+    "name": "local-vlm",
+    "description": "Replace the image URL with a reachable URL or data URI",
+    "cases": [{
+      "id": "image-description",
+      "messages": [{
+        "role": "user",
+        "content": [
+          {"type": "text", "text": "Describe the image and transcribe any visible text."},
+          {"type": "image_url", "image_url": {"url": "https://example.com/test-image.jpg"}}
+        ]
+      }],
+      "max_tokens": 256,
+      "temperature": 0,
+      "tags": ["vision", "ocr"]
+    }]
+  }
+}

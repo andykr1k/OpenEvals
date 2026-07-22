@@ -1,0 +1,56 @@
+[build-system]
+requires = ["uv_build>=0.11.3,<0.12.0"]
+build-backend = "uv_build"
+
+[project]
+name = "open-evals"
+version = "0.1.0"
+description = "Local LLM and VLM performance evaluation for OpenAI-compatible inference servers"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = [
+  "benchmark",
+  "evaluation",
+  "llm",
+  "local-inference",
+  "openai-compatible",
+  "vllm",
+  "vlm",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: System :: Benchmark",
+]
+dependencies = [
+  "httpx>=0.27,<1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.5",
+]
+
+[project.scripts]
+open-evals = "openevals.cli:main"
+
+[tool.uv.build-backend]
+module-name = "openevals"
+module-root = ""
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

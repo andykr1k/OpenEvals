@@ -1,0 +1,31 @@
+{
+  "endpoint": "http://127.0.0.1:8000",
+  "model": "Qwen/Qwen3-8B-AWQ",
+  "api_key": "EMPTY",
+  "concurrency": [1, 2, 4],
+  "repetitions": 2,
+  "warmup_requests": 1,
+  "timeout_seconds": 300,
+  "request_rate": null,
+  "metrics_endpoint": "http://127.0.0.1:8000/metrics",
+  "metadata": {"gpu": "local", "notes": "starter smoke benchmark"},
+  "suite": {
+    "name": "smoke-custom",
+    "description": "Small connectivity and performance check",
+    "cases": [
+      {
+        "id": "short-answer",
+        "prompt": "Explain continuous batching in two sentences.",
+        "max_tokens": 64,
+        "temperature": 0
+      },
+      {
+        "id": "code-generation",
+        "messages": [{"role": "user", "content": "Write a Python function that checks whether a string is a palindrome."}],
+        "max_tokens": 128,
+        "temperature": 0,
+        "tags": ["code"]
+      }
+    ]
+  }
+}

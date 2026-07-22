@@ -1,0 +1,33 @@
+name: Feature request
+description: Suggest a focused improvement to Open Evals
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or use case
+      description: What benchmark workflow or user problem should this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the desired behavior, including CLI or configuration examples if useful.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: How are you handling this today, and what tradeoffs did you consider?
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Project fit
+      options:
+        - label: This preserves a terminal-first, local-friendly workflow.
+          required: true
+        - label: I searched existing issues for a similar request.
+          required: true
